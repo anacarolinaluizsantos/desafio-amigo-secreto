@@ -18,13 +18,22 @@ function adicionarAmigo(){
 
 function atualizarListaAmigos(){
     let listaAmigos = document.getElementById("listaAmigos");
-    listaAmigos.innerHTML = "";
+    listaAmigos.textContent = "";
 
     for(let i = 0; i <= amigos.length; i++){
         let item = document.createElement("li");
         item.textContent = amigos[i];
         listaAmigos.appendChild(item);
     }
+}
+function sortearAmigo(){
+    if(amigos.length === 0){
+        alert("Não há amigos adicionados!!!");
+        return;
+    }
+    let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
+    let resultado = document.getElementById("resultado");
+    resultado.textContent = `O amigo sorteado foi:${amigoSorteado}`;
 }
 
 
